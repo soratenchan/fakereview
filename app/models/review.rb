@@ -6,5 +6,5 @@ class Review < ApplicationRecord
   self.inheritance_column = :_type_disabled
   
   has_many :favorites, dependent: :destroy
-  has_many :favoriters, through: :favorites, source: :user  
+  has_many :favoriters, through: :favorites, source: :user  , dependent: :destroy
 end

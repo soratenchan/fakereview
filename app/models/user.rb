@@ -6,9 +6,9 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :favorites , dependent: :destroy
-  has_many :favoritings, through: :favorites, source: :review
+  has_many :favoritings, through: :favorites, source: :review, dependent: :destroy
   
   def favorite(other_review)
     self.favorites.find_or_create_by(review_id: other_review.id)
