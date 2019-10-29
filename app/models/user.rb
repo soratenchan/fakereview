@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :reviews
-  has_many :favorites
+  has_many :favorites , dependent: :destroy
   has_many :favoritings, through: :favorites, source: :review
   
   def favorite(other_review)

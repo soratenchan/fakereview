@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_user_logged_in, only: [:destroy]  
   def show
     @user = User.find(params[:id])
     @reviews = @user.reviews.order(id: :desc).page(params[:page]) 
@@ -25,7 +26,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @favoritings = @user.favoritings.order(id: :desc).page(params[:page])
     counts(@user)
-  end  
+  end 
+  
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = 'ユーザーを削除しました。'
+    redirect_to root_url
+  end
 
   private
 
