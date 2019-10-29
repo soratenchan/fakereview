@@ -1,0 +1,14 @@
+<div class="center jumbotron text-white bg-secondary">
+  <div class="text-center">
+    <h4>Fake Review Stars(FRS)へようこそ！</h4>
+    <h5>
+        FRSではあなたが想像し作り上げた架空のゲーム、または実在のゲームに対し自由にレビューを行うサイトです。<br>
+        ユーザーは登録後にレビューを投稿、お気に入りができるようになります。投稿はこちらから
+    </h5>
+    
+    <br><br><%= link_to 'レビューを投稿する', new_review_path, class: 'btn btn-lg btn-info' %>
+  </div>
+  
+</div>
+
+<%= render 'reviews/reviews', reviews: @reviews %>
