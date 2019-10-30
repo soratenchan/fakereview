@@ -23,4 +23,6 @@ class User < ApplicationRecord
     self.favoritings.include?(other_review)
   end
   
+
+  
 end

@@ -10,11 +10,9 @@
   </div>
   
 </div>
-
 <ul class="navbar-nav">
   <li class="nav-item"><%= link_to '新規順', root_path, class: 'nav-link' %></li>
   <li class="nav-item"><%= link_to '人気順', ranking_path,class: 'nav-link' %></li>
-</ul>
-  
+</ul>      
 
-<%= render 'reviews/reviews', reviews: @reviews %>
+<%= render 'reviews/reviews', reviews: @review_all %>

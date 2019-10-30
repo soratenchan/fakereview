@@ -15,4 +15,6 @@ class ApplicationController < ActionController::Base
     @count_favoritings = user.favoritings.count
   end
   
+
+  
 end
