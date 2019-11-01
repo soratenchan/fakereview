@@ -17,7 +17,6 @@
           <div class="col-md-4">       
             <tr>
               <td>レビュー  <%= simple_format(review.content) %></td>
-             
             </tr>
           </div>
         </div>
@@ -39,7 +38,7 @@
          <% else %>
           <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
              <%= hidden_field_tag :review_id, review.id %>
-             <%= f.submit 'お気に入り', class: 'btn btn-info btn-sm' %>
+             <%= f.submit 'お気に入り', class: 'btn btn-info btn-sm' %> お気に入り数  <%= review.favorites.count %>
            <% end %>
          <% end %> 
          </td>
